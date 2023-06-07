@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seletor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <br/>
+    <div class="container">
+      {% include 'message.html' %}
+      <br/>
+      <form action="/delete" method="post">
+        <div class="mb-3 col-md-3">
+          <input type="hidden" id="id" name="id" value="{{ seletor.id }}">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome" value="{{ seletor.nome }}" disabled>
+        </div>
+        <div class="mb-3 col-md-3">
+          <label for="ip" class="form-label">IP</label>
+          <input type="text" class="form-control" id="ip" name="ip" value="{{ seletor.ip }}" disabled>
+        </div>
+        <button type="submit" class="btn btn-primary">Excluir</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
